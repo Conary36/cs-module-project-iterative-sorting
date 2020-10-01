@@ -25,10 +25,14 @@ def bubble_sort(arr):
     # Your code here
     element = True
     while element:
+        # This will set
         element = False
+        # Check to see if iteration is greater than the nex larger iteration
         for i in range(0, len(arr) - 1):
             if arr[i] > arr[i + 1]:
+                # swap
                 arr[i], arr[i + 1] = arr[i + 1], arr[i]
+                # Check that it is true
                 element = True
                 print(arr)
 
