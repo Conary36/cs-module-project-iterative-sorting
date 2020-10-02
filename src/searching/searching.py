@@ -11,11 +11,11 @@ def linear_search(arr, target):
 # def binary_search(arr, target):
 #
 #     # Your code here
-   def binary_search(arr, target):
+def binary_search(arr, target):
 
-    low = 0
-    high = len(arr) - 1
-    if low <= high:
+    for i in range(0, len(arr) - 1):
+        low = 0
+        high = len(arr) - 1
         mid = (low + high) / 2
         if target < arr[mid]:
             high = mid - 1
@@ -23,6 +23,5 @@ def linear_search(arr, target):
             low = mid + 1
         else:
             return mid
-
 
     return -1  # not found
