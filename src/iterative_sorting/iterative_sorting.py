@@ -17,6 +17,11 @@ def selection_sort(arr):
         # Your code here
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
+    # This is the temp version of swap
+    # temp = arr[cur_index]
+    # arr[cur_index] = arr[smallest_index]
+    # arr[smallest_index] = temp
+
     return arr
 
 
@@ -60,5 +65,18 @@ What is the time and space complexity of the counting sort algorithm?
 
 def counting_sort(arr, maximum=None):
     # Your code here
+    if not arr:
+        return []
+    if min(arr) < 0:
+        print("Negative numbers is not allowed")
+        return None
+    result = []
+    temp_bucket = [0 for _ in range(max(arr)+1)]
+    for x in arr:
+        temp_bucket[x] += 1
+    for i in range(len(temp_bucket)):
+        while temp_bucket[i] > 0:
+            result.append(i)
+            temp_bucket[i] -= 1
 
     return arr
